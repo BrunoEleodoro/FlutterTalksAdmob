@@ -39,7 +39,8 @@ class _MyHomePageState extends State<MyHomePage> {
   );
 
   BannerAd myBanner;
-
+  InterstitialAd myInterstitial;
+  int clicks = 0;
   void startBanner() {
     myBanner = BannerAd(
       adUnitId: BannerAd.testAdUnitId,
@@ -63,6 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void dispose() {
     myBanner?.dispose();
+    myInterstitial?.dispose();
     super.dispose();
   }
 
@@ -76,11 +78,37 @@ class _MyHomePageState extends State<MyHomePage> {
     displayBanner();
   }
 
+  InterstitialAd buildInterstitial() {
+    return InterstitialAd(
+        adUnitId: InterstitialAd.testAdUnitId,
+        targetingInfo: MobileAdTargetingInfo(testDevices: <String>[]),
+        listener: (MobileAdEvent event) {
+          if (event == MobileAdEvent.loaded) {
+            myInterstitial?.show();
+          }
+          if (event == MobileAdEvent.clicked || event == MobileAdEvent.closed) {
+            myInterstitial.dispose();
+            clicks = 0;
+          }
+        });
+  }
+
   void onTap(position) {
+    shouldDisplayTheAd();
     if (position == 0) {
       Navigator.pushNamed(context, '/first');
     } else {
       Navigator.pushNamed(context, '/second');
+    }
+  }
+
+  void shouldDisplayTheAd() {
+    clicks++;
+    if (clicks >= 3) {
+      myInterstitial = buildInterstitial()
+        ..load()
+        ..show();
+      clicks = 0;
     }
   }
 
