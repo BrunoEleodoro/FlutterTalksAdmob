@@ -38,11 +38,42 @@ class _MyHomePageState extends State<MyHomePage> {
     testDevices: <String>[],
   );
 
+  BannerAd myBanner;
+
+  void startBanner() {
+    myBanner = BannerAd(
+      adUnitId: BannerAd.testAdUnitId,
+      size: AdSize.smartBanner,
+      targetingInfo: targetingInfo,
+      listener: (MobileAdEvent event) {
+        print("BannerAd event is $event");
+      },
+    );
+  }
+
+  void displayBanner() {
+    myBanner
+      ..load()
+      ..show(
+        anchorOffset: 0.0,
+        anchorType: AnchorType.bottom,
+      );
+  }
+
+  @override
+  void dispose() {
+    myBanner?.dispose();
+    super.dispose();
+  }
+
   @override
   void initState() {
     super.initState();
     FirebaseAdMob.instance
         .initialize(appId: "ca-app-pub-3940256099942544~3347511713");
+
+    startBanner();
+    displayBanner();
   }
 
   void onTap(position) {
@@ -55,30 +86,32 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home Page'),
-      ),
-      body: Container(
-        child: Center(
-          child: Text(
-            'Home Page',
-            style: TextStyle(fontSize: 25),
+    return Padding(
+        padding: EdgeInsets.only(bottom: 60),
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text('Home Page'),
           ),
-        ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: this.onTap,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.access_alarm),
-            title: Text('First Screen'),
+          body: Container(
+            child: Center(
+              child: Text(
+                'Home Page',
+                style: TextStyle(fontSize: 25),
+              ),
+            ),
           ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.account_balance_wallet),
-              title: Text('Second Screen')),
-        ],
-      ),
-    );
+          bottomNavigationBar: BottomNavigationBar(
+            onTap: this.onTap,
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.access_alarm),
+                title: Text('First Screen'),
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.account_balance_wallet),
+                  title: Text('Second Screen')),
+            ],
+          ),
+        ));
   }
 }
