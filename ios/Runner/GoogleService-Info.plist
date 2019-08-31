@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>373885285494-3f598r10qu83ao41kri4e0tp0i8heqlr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.373885285494-3f598r10qu83ao41kri4e0tp0i8heqlr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC16Ss3M088qyOvU_rqpMVG_sBF0QwVXlI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>373885285494</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>brunoeleodoro.com.flutterTalksAdmob</string>
+	<key>PROJECT_ID</key>
+	<string>fluttertalks-8f7a1</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fluttertalks-8f7a1.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:373885285494:ios:5ffc02ae83d57e42</string>
+	<key>DATABASE_URL</key>
+	<string>https://fluttertalks-8f7a1.firebaseio.com</string>
+</dict>
+</plist>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "373885285494",
+    "firebase_url": "https://fluttertalks-8f7a1.firebaseio.com",
+    "project_id": "fluttertalks-8f7a1",
+    "storage_bucket": "fluttertalks-8f7a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:373885285494:android:20afc1d577437242",
+        "android_client_info": {
+          "package_name": "brunoeleodoro.com.flutter_talks_admob"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "373885285494-4htlg47hfg8j5dn5upf255hdflsovada.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-pgEwyOQj37fnTPO3okswAvHQKnYHfjA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "373885285494-4htlg47hfg8j5dn5upf255hdflsovada.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "373885285494-3f598r10qu83ao41kri4e0tp0i8heqlr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "brunoeleodoro.com.flutterTalksAdmob"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
