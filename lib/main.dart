@@ -35,20 +35,27 @@ class _MyHomePageState extends State<MyHomePage> {
     keywords: <String>['flutterio', 'beautiful apps'],
     contentUrl: 'https://flutter.io',
     childDirected: false,
-    designedForFamilies: false,
-    gender: MobileAdGender.male,
     testDevices: <String>[],
   );
 
   BannerAd myBanner;
   InterstitialAd myInterstitial;
   int clicks = 0;
+
   void startBanner() {
     myBanner = BannerAd(
       adUnitId: BannerAd.testAdUnitId,
       size: AdSize.smartBanner,
       targetingInfo: targetingInfo,
       listener: (MobileAdEvent event) {
+        if (event == MobileAdEvent.opened) {
+          // MobileAdEvent.opened
+          // MobileAdEvent.clicked
+          // MobileAdEvent.closed
+          // MobileAdEvent.failedToLoad
+          // MobileAdEvent.impression
+          // MobileAdEvent.leftApplication
+        }
         print("BannerAd event is $event");
       },
     );
